@@ -28,5 +28,16 @@
         <source>&amp;About delete-all</source>
         <translation>&amp;Über alles-löschen</translation>
     </message>
+    </message>
+    <message>
+        <location filename="../delete_all.py" line="93"/>
+        <source>Delete all Layers?</source>
+        <translation>Alle Layer löschen?</translation>
+    </message>
+    <message>
+        <location filename="../delete_all.py" line="93"/>
+        <source>Do you want to delete all groups and layers in the layer window?</source>
+        <translation>Sollen alle Gruppen und Layer im Layer-Fenster gelöscht werden?</translation>
+    </message>
 </context>
 </TS>
