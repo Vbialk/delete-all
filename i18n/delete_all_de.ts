@@ -28,7 +28,6 @@
         <source>&amp;About delete-all</source>
         <translation>&amp;Über alles-löschen</translation>
     </message>
-    </message>
     <message>
         <location filename="../delete_all.py" line="93"/>
         <source>Delete all Layers?</source>
