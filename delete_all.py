@@ -83,6 +83,8 @@ class DeleteAll:
         del self.action
         del self.toolbar
         del self.layers_action
+        
+        self.menu.deleteLater()
 
     def about(self):
         aboutString = (
