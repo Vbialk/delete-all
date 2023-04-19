@@ -71,7 +71,7 @@ class DeleteAll:
         
         self.layers_panel = self.iface.mainWindow().findChild(QDockWidget, "Layers").findChild(QToolBar)
         self.layers_action = QAction(QIcon(os.path.join(self.plugin_dir, 'delete_all.png')),
-                                     f'<b>{self.tr("&delete-all")}</b> {self.tr("(CTRL+ALT+D)")}',
+                                     f'<b>{self.tr("&delete-all")}</b> {self.tr("(Ctrl+Alt+D)")}',
                                      self.iface.mainWindow())
         self.layers_action.setShortcut(QKeySequence(Qt.CTRL | Qt.Key_D | Qt.ALT)) 
         if self.layers_panel:
