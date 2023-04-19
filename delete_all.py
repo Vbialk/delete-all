@@ -21,9 +21,9 @@ QGIS plugin
 
 import os
 from qgis.core import QgsProject
-from qgis.PyQt.QtCore import QCoreApplication, QSettings, QTranslator
+from qgis.PyQt.QtCore import QCoreApplication, QSettings, Qt, QTranslator
 from qgis.PyQt.QtGui import QIcon
-from qgis.PyQt.QtWidgets import QAction, QMenu, QMessageBox, QDockWidget, QToolBar
+from qgis.PyQt.QtWidgets import (QAction, QApplication, QDockWidget, QMenu, QMessageBox, QToolBar)
 
 
 class DeleteAll:
@@ -110,6 +110,11 @@ class DeleteAll:
         self.iface.mapCanvas().refresh()
     
     def showWarning(self):
+        modifiers = QApplication.keyboardModifiers()
+        if modifiers == Qt.ShiftModifier or modifiers == Qt.ControlModifier:
+            self.deleteAll()
+            return
+        
         answer = QMessageBox.question(self.iface.mainWindow(), self.tr('Delete all Layers?'), self.tr(
             'Do you want to delete all groups and layers in the layer window?'), QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if answer == QMessageBox.Yes:
