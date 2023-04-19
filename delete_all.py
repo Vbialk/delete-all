@@ -22,7 +22,7 @@ QGIS plugin
 import os
 from qgis.core import QgsProject
 from qgis.PyQt.QtCore import QCoreApplication, QSettings, Qt, QTranslator
-from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtGui import QIcon, QKeySequence
 from qgis.PyQt.QtWidgets import (QAction, QApplication, QDockWidget, QMenu, QMessageBox, QToolBar)
 
 
@@ -70,7 +70,10 @@ class DeleteAll:
         self.toolbar.addAction(self.action)
         
         self.layers_panel = self.iface.mainWindow().findChild(QDockWidget, "Layers").findChild(QToolBar)
-        self.layers_action = QAction(QIcon(os.path.join(self.plugin_dir, 'delete_all.png')), self.tr('&delete-all'), self.iface.mainWindow())
+        self.layers_action = QAction(QIcon(os.path.join(self.plugin_dir, 'delete_all.png')),
+                                     f'<b>{self.tr("&delete-all")}</b> {self.tr("(CTRL+ALT+D)")}',
+                                     self.iface.mainWindow())
+        self.layers_action.setShortcut(QKeySequence(Qt.CTRL | Qt.Key_D | Qt.ALT)) 
         if self.layers_panel:
             self.layers_action.triggered.connect(self.showWarning)
             self.layers_panel.addAction(self.layers_action)
