@@ -16,6 +16,6 @@ deprecated=False
 changelog=v1.0.3:
           - Adds a keyboard shortcut (Ctrl+Alt+D) to trigger the workflow
           v1.0.2:
-          - Adds a key modifier to bypass the promt whether everything should be deleted
+          - Adds a key modifier to bypass the prompt whether everything should be deleted
           v1.0.1:
           - Adds a "Delete all" button in the Layer menu
