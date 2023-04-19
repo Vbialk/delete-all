@@ -38,5 +38,10 @@
         <source>Do you want to delete all groups and layers in the layer window?</source>
         <translation>Sollen alle Gruppen und Layer im Layer-Fenster gelöscht werden?</translation>
     </message>
+    <message>
+        <location filename="../delete_all.py" line="73"/>
+        <source>(Ctrl+Alt+D)</source>
+        <translation>(Strg+Alt+D)</translation>
+    </message>
 </context>
 </TS>
